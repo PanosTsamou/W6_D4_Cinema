@@ -56,14 +56,20 @@ describe('Cinema', function () {
 
 
   it('should be able to confirm *at least one* film is from a specified year - true case - 1/2', function () {
-    [1698, 1981]
-    (1981)
-    const actual = cinema.totalFilmTimes();
-    assert.strictEqual(actual, 622);
+    const actual = cinema.findIfYearExist(2018);
+    assert.strictEqual(actual, true);
   }); 
 
 
-  it('should be able to confirm *none of* the films are from a specified year - false case - 2/2');
-  it('should be able to confirm whether *all* films are *at least* a specified length (true / false)');
+  it('should be able to confirm *none of* the films are from a specified year - false case - 2/2', function () {
+    const actual = cinema.findIfYearExist(1990);
+    assert.strictEqual(actual, false);
+  });
+
+
+  it('should be able to confirm whether *all* films are *at least* a specified length (true / false)', function () {
+    const actual = cinema.checkAboveMinLength(90);
+    assert.strictEqual(actual, true);
+  });
  
 });

@@ -26,8 +26,14 @@ Cinema.prototype.totalFilmTimes = function(){
   return totalTimes
 }
 
-Cinema.prototype.findFilmsByYear = function(year){
-  const filmByYear = this.films.fil
+Cinema.prototype.findIfYearExist = function(year){
+  const filmsYears = this.films.map((film) => film.year)
+  return filmsYears.includes(year)
+}
+
+Cinema.prototype.checkAboveMinLength = function(minLength){
+  const listOfFilmsUnderMinLength = this.films.filter((film) => film.length < minLength)
+  return listOfFilmsUnderMinLength.length === 0
 }
 
 
